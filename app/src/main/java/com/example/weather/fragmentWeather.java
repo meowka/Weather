@@ -90,7 +90,6 @@ public class fragmentWeather extends Fragment {
 
             JSONObject details = json.getJSONArray("weather").getJSONObject(0);
             JSONObject main = json.getJSONObject("main");
-            String description;
             detailsField.setText(
                     details.getString("description") +
                             "\n" + getString(R.string.humidity) + main.getString("humidity") + "%" +

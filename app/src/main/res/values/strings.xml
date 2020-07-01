@@ -21,4 +21,6 @@
     <string name="sys">sys</string>
     <string name="country">country</string>
     <string name="comma">,</string>
+    <string name="settings">Настройки</string>
+    <string name="exchange">Курс валют</string>
 </resources>
