@@ -4,6 +4,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 public class APIClient {
     private static Retrofit retrofit = null;
@@ -16,7 +17,7 @@ public class APIClient {
 
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://www.cbr.ru/")
+                .baseUrl("https://www.cbr-xml-daily.ru/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

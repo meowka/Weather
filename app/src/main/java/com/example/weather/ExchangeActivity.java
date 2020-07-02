@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.weather.pojo.MultipleResource;
-
-import java.util.List;
+import com.example.weather.pojo.USD;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,26 +24,25 @@ public class ExchangeActivity extends AppCompatActivity {
 
         changeText = findViewById(R.id.textView);
         apiInterface = APIClient.getClient().create(APIInterface.class);
-        Call<List<MultipleResource>> call = apiInterface.doGetListResources(01/07/2020);
-        call.enqueue(new Callback<List<MultipleResource>>() {
+        Call<USD> call = apiInterface.doGetListResources();
+        call.enqueue(new Callback<USD>() {
             @Override
-            public void onResponse(Call<List<MultipleResource>> call, Response<List<MultipleResource>> response) {
-                if (!response.isSuccessful()){
-                    changeText.setText("Code: " + response.code());
-                    return;
-                }
-//                Log.d("TAG", response.code()+"");
-                String displayResponse = "";
-                List<MultipleResource> resources = response.body();
+            public void onResponse(Call<USD> call, Response<USD> response) {
+                Log.d("TAG",response.code()+"");
 
-                for (MultipleResource resource : resources) {
-                    displayResponse += "Id: " + resource.getId() + " " + "name: "  + resource.getName() + " value:"  + resource.getValue() + "\n";
-                }
+                String displayResponse = "";
+
+                USD resource = response.body();
+
+                    displayResponse += "name: " + resource.getName()+ " " + "value: " + resource.getValue() + "\n";
+
+
                 changeText.setText(displayResponse);
+
             }
 
             @Override
-            public void onFailure(Call<List<MultipleResource>> call, Throwable t) {
+            public void onFailure(Call<USD> call, Throwable t) {
                 call.cancel();
             }
         });
