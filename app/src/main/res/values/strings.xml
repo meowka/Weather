@@ -23,4 +23,7 @@
     <string name="comma">,</string>
     <string name="settings">Настройки</string>
     <string name="exchange">Курс валют</string>
+    <string name="exchangeTitle">Курс валют на:</string>
+    <string name="usdimg">usdImg</string>
+    <string name="eurImg">eurImg</string>
 </resources>

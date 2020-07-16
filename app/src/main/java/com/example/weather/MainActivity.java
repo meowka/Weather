@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.container, new fragmentWeather())
                     .commit();
         }
-
-
     }
 
     @Override

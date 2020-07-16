@@ -8,7 +8,6 @@
         android:title="@string/change_city"
         app:showAsAction="never"
         />
-
     <item
         android:id="@+id/settings"
         android:orderInCategory="1"
@@ -21,5 +20,4 @@
         android:title="@string/exchange"
         app:showAsAction="never"
         />
-
 </menu>
